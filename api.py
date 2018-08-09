@@ -7,8 +7,8 @@ import os
 
 app = Flask(__name__)
 Swagger(app)
-CONFIG = {'AMQP_URI': None}
-CONFIG['AMQP_URI'] = os.environ['AMQP_URI']
+
+CONFIG = {'AMQP_URI': "pyamqp://guest:guest@localhost"}
 
 @app.route('/send', methods=['POST'])
 @swag_from('docs/send.yml')
